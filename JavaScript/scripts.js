@@ -31,35 +31,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 2. VALIDACIÓN DEL FORMULARIO
-    const formulario = document.getElementById('formulario-contacto');
+    // 2. VALIDACIÓN DEL FORMULARIO DE RESERVAS
+    const formularioReserva = document.getElementById('formulario-reserva');
     const mensajeAlerta = document.getElementById('mensaje-alerta');
 
-    if(formulario) {
-        formulario.addEventListener('submit', function(evento) {
-            evento.preventDefault();
+    if(formularioReserva) {
+        formularioReserva.addEventListener('submit', function(evento) {
+            evento.preventDefault(); 
             const nombre = document.getElementById('nombre').value;
             const correo = document.getElementById('correo').value;
-            const mensaje = document.getElementById('mensaje').value;
+            const destino = document.getElementById('destino').value;
+            const fecha = document.getElementById('fecha').value;
+            const pasajeros = document.getElementById('pasajeros').value;
+            const hospedaje = document.getElementById('hospedaje').value;
 
-            if(nombre === '' || correo === '' || mensaje === '') {
-                mensajeAlerta.textContent = 'Por favor, llena todos los campos.';
-                mensajeAlerta.style.color = 'red';
+            if(nombre === '' || correo === '' || destino === '' || fecha === '' || pasajeros === '' || hospedaje === '') {
+                mostrarAlerta('Por favor, llena todos los campos obligatorios.', 'error');
                 return;
             }
+
             const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if(!regexCorreo.test(correo)) {
-                mensajeAlerta.textContent = 'Ingresa un correo electrónico válido.';
-                mensajeAlerta.style.color = 'red';
+                mostrarAlerta('Ingresa un correo electrónico válido.', 'error');
                 return;
             }
-
-            mensajeAlerta.textContent = '¡Solicitud enviada correctamente!';
-            mensajeAlerta.style.color = 'green';
-            formulario.reset();
+            const textoExito = `¡Gracias, ${nombre}! Hemos registrado tu solicitud para viajar a ${destino.toUpperCase()} el ${fecha}. Un asesor te contactará pronto.`;
+            mostrarAlerta(textoExito, 'exito');
+            formularioReserva.reset();
         });
     }
-});
+
+    // Función auxiliar para mostrar las alertas
+    function mostrarAlerta(mensaje, tipo) {
+        mensajeAlerta.textContent = mensaje;
+        
+        if (tipo === 'error') {
+            mensajeAlerta.classList.remove('exito');
+            mensajeAlerta.classList.add('error');
+        } else {
+            mensajeAlerta.classList.remove('error');
+            mensajeAlerta.classList.add('exito');
+        }
+
+        setTimeout(() => {
+            mensajeAlerta.classList.remove('error', 'exito');
+            mensajeAlerta.style.display = 'none';
+            setTimeout(() => mensajeAlerta.style.display = '', 100); 
+        }, 5000);
+    }
+    });
 
 // 3. FILTRO DE DESTINOS
     const botonesFiltro = document.querySelectorAll('.boton-filtro');
