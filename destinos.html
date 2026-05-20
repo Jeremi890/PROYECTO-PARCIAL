@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes Dual | Nuestros Destinos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navegacion-principal contenedor">
+            <div class="logo">VIAJES<span>DUAL</span></div>
+            <div class="enlaces">
+                <a href="index.html">Inicio</a>
+                <a href="destinos.html" class="activo">Destinos</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenedor principal" style="margin-top: 5rem;">
+        <div class="alineacion-lineal">
+            <h1 class="titulo-seccion">Paquetes Disponibles</h1>
+            <p style="color: var(--texto-gris); font-size: 1.8rem; margin-top: -2rem; margin-bottom: 3rem;">
+                Encuentra tu clima ideal y prepárate para la aventura de tu vida.
+            </p>
+            
+            <div class="filtros-destinos">
+                <button class="boton-filtro activo" data-filtro="todos">Todos</button>
+                <button class="boton-filtro" data-filtro="calido">Cálidos ☀️</button>
+                <button class="boton-filtro" data-filtro="invernal">Invernales ❄️</button>
+            </div>
+        </div>
+
+        <div class="grid-destinos">
+            
+            <article class="tarjeta-destino" data-categoria="calido">
+                <div class="imagen-destino">
+                    <img src="imagenes/estatua.jpg" alt="Pirámides de Egipto">
+                    <span class="etiqueta-clima etiqueta-calido">Cálido</span>
+                </div>
+                <div class="contenido-destino">
+                    <h3>Misterios de Egipto</h3>
+                    <p>Navega por el Nilo y descubre los secretos de los faraones bajo el sol del desierto.</p>
+                    <div class="detalles-paquete">
+                        <span><strong>Duración:</strong> 7 Días</span>
+                        <span class="precio">$1,200</span>
+                    </div>
+                    <a href="contacto.html" class="boton-primario boton-bloque">Reservar Ahora</a>
+                </div>
+            </article>
+
+            <article class="tarjeta-destino" data-categoria="invernal">
+                <div class="imagen-destino">
+                    <img src="imagenes/suiza.jpg" alt="Alpes Suizos">
+                    <span class="etiqueta-clima etiqueta-invernal">Invernal</span>
+                </div>
+                <div class="contenido-destino">
+                    <h3>Alpes Suizos</h3>
+                    <p>Disfruta de las mejores pistas de esquí y relájate en cabañas de lujo junto al fuego.</p>
+                    <div class="detalles-paquete">
+                        <span><strong>Duración:</strong> 5 Días</span>
+                        <span class="precio">$1,500</span>
+                    </div>
+                    <a href="contacto.html" class="boton-primario boton-bloque">Reservar Ahora</a>
+                </div>
+            </article>
+
+            <article class="tarjeta-destino" data-categoria="calido">
+                <div class="imagen-destino">
+                    <img src="imagenes/caribe.jpg" alt="Playas del Caribe">
+                    <span class="etiqueta-clima etiqueta-calido">Cálido</span>
+                </div>
+                <div class="contenido-destino">
+                    <h3>Paraíso Caribeño</h3>
+                    <p>Aguas cristalinas, arena blanca y resorts todo incluido para un descanso total.</p>
+                    <div class="detalles-paquete">
+                        <span><strong>Duración:</strong> 8 Días</span>
+                        <span class="precio">$950</span>
+                    </div>
+                    <a href="contacto.html" class="boton-primario boton-bloque">Reservar Ahora</a>
+                </div>
+            </article>
+
+            <article class="tarjeta-destino" data-categoria="invernal">
+                <div class="imagen-destino">
+                    <img src="imagenes/islandia.jpg" alt="Auroras en Islandia">
+                    <span class="etiqueta-clima etiqueta-invernal">Invernal</span>
+                </div>
+                <div class="contenido-destino">
+                    <h3>Auroras de Islandia</h3>
+                    <p>Explora glaciares, géiseres y persigue la aurora boreal en este viaje mágico.</p>
+                    <div class="detalles-paquete">
+                        <span><strong>Duración:</strong> 6 Días</span>
+                        <span class="precio">$1,800</span>
+                    </div>
+                    <a href="contacto.html" class="boton-primario boton-bloque">Reservar Ahora</a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+    <div class="contenedor">
+        <p>&copy; 2026 | Desarrollado por Jeremi Vera &amp; Abel Montoya</p>
+        <p style="color: var(--texto-gris); font-size: 1.4rem; margin-top: 0.5rem;">Proyecto de Desarrollo de Aplicaciones Web - Todos los derechos reservados</p>
+    </div>
+</footer>
+
+    <script src="JavaScript/scripts.js"></script>
+</body>
+</html>

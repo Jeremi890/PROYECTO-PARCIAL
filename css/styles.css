@@ -1,0 +1,490 @@
+:root {
+    --fondo-oscuro: #0a1128;
+    --fondo-secundario: #121f3d;
+    --acento-calido: #f6aa1c;
+    --acento-hover: #d18f14;
+    --texto-claro: #f8f9fa;
+    --texto-gris: #adb5bd;
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-textos: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 62.5%; 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.scroll-fuerte {
+    scroll-snap-type: y mandatory;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Scroll Snap para las secciones */
+section, .hero, .footer {
+    scroll-snap-align: start;
+    scroll-margin-top: 8rem;
+}
+
+body {
+    font-family: var(--fuente-textos);
+    font-size: 1.6rem;
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-claro);
+    margin: 0;
+    padding-top: 8rem;
+}
+
+
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Títulos Generales */
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    margin: 0;
+}
+
+.titulo-seccion {
+    font-size: 3.5rem;
+    color: var(--acento-calido);
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Navegación Fija */
+.header {
+    background-color: rgba(10, 17, 40, 0.95);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid var(--acento-calido);
+}
+
+.navegacion-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.logo {
+    font-family: var(--fuente-titulos);
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--texto-claro);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--acento-calido);
+}
+
+.enlaces a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    margin-left: 3rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.enlaces a:hover, .enlaces a.activo {
+    color: var(--acento-calido);
+}
+
+/* Sección Hero */
+.hero {
+    background-image: linear-gradient(to right, rgba(10, 17, 40, 0.9), rgba(10, 17, 40, 0.4)), url('../imagenes/australia.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    margin-top: -8rem;
+    padding-top: 8rem;
+}
+
+.hero-contenido h1 {
+    font-size: 6rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    max-width: 80rem;
+}
+
+.hero-contenido p {
+    font-size: 2.2rem;
+    color: var(--texto-gris);
+    max-width: 60rem;
+    margin-bottom: 4rem;
+}
+
+.boton-primario {
+    background-color: var(--acento-calido);
+    color: var(--fondo-oscuro);
+    padding: 1.5rem 4rem;
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.boton-primario:hover {
+    background-color: var(--acento-hover);
+    transform: translateY(-3px);
+}
+
+/* Elemento Lineal de Diseño */
+.alineacion-lineal {
+    border-left: 5px solid var(--acento-calido);
+    padding-left: 3rem;
+    margin: 8rem auto;
+}
+
+/* Tarjetas */
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+}
+
+.tarjeta {
+    background-color: var(--fondo-secundario);
+    padding: 4rem 3rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    border-bottom: 3px solid var(--acento-calido);
+}
+
+.icono-tarjeta {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 2rem;
+}
+
+.tarjeta h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--texto-claro);
+}
+
+.tarjeta p {
+    color: var(--texto-gris);
+    line-height: 1.6;
+}
+
+/* Galería con información */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#imagen-galeria {
+    width: 100%;
+    height: 570px; 
+    object-fit: cover; 
+    object-position: center;
+    display: block;
+    border-radius: 8px;
+}
+
+.controles-slider {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 2rem;
+}
+
+.boton-flecha {
+    background-color: rgba(10, 17, 40, 0.7);
+    color: var(--acento-calido);
+    border: none;
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.boton-flecha:hover {
+    background-color: var(--acento-calido);
+    color: var(--fondo-oscuro);
+}
+
+/* Footer */
+.footer {
+    background-color: #050a17;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 6rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Para el Responsive */
+@media (max-width: 768px) {
+    .navegacion-principal {
+        flex-direction: column;
+    }
+    .enlaces {
+        margin-top: 2rem;
+    }
+    .enlaces a {
+        margin: 0 1.5rem;
+    }
+    .hero-contenido h1 {
+        font-size: 4rem;
+    }
+}
+
+/* Filtros de Destinos */
+.filtros-destinos {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.boton-filtro {
+    background-color: transparent;
+    color: var(--texto-claro);
+    border: 2px solid var(--acento-calido);
+    padding: 0.8rem 2rem;
+    border-radius: 20px;
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-filtro:hover, .boton-filtro.activo {
+    background-color: var(--acento-calido);
+    color: var(--fondo-oscuro);
+}
+
+/* Tarjetas de Destinos */
+.grid-destinos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+    margin-bottom: 6rem;
+}
+
+.tarjeta-destino {
+    background-color: var(--fondo-secundario);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-destino:hover {
+    transform: translateY(-5px);
+}
+
+.imagen-destino {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.imagen-destino img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tarjeta-destino:hover .imagen-destino img {
+    transform: scale(1.1);
+}
+
+.etiqueta-clima {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.etiqueta-calido {
+    background-color: var(--acento-calido);
+    color: var(--fondo-oscuro);
+}
+
+.etiqueta-invernal {
+    background-color: #48cae4;
+    color: var(--fondo-oscuro);
+}
+
+.contenido-destino {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.contenido-destino h3 {
+    font-size: 2.2rem;
+    color: var(--texto-claro);
+    margin-bottom: 1rem;
+}
+
+.contenido-destino p {
+    color: var(--texto-gris);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.detalles-paquete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.precio {
+    font-family: var(--fuente-titulos);
+    font-size: 2.2rem;
+    color: var(--acento-calido);
+    font-weight: 900;
+}
+
+.boton-bloque {
+    display: block;
+    text-align: center;
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* Formulario de Reservas */
+.formulario fieldset {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3rem;
+    border-radius: 8px;
+    background-color: var(--fondo-secundario);
+}
+
+.formulario legend {
+    color: var(--acento-calido);
+    font-family: var(--fuente-titulos);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0 1rem;
+    text-transform: uppercase;
+}
+
+.grid-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.campo-completo {
+    grid-column: 1 / 3;
+    margin-top: 1rem;
+}
+
+.campo label {
+    color: var(--texto-claro);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.input-text {
+    padding: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(10, 17, 40, 0.5);
+    color: var(--texto-claro);
+    font-family: var(--fuente-textos);
+    font-size: 1.6rem;
+    transition: border-color 0.3s;
+}
+
+.input-text:focus {
+    outline: none;
+    border-color: var(--acento-calido);
+}
+
+textarea.input-text {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Notificación del Formulario */
+.alerta {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+.alerta.exito {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+    display: block;
+}
+
+.alerta.error {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+    display: block;
+}
+
+/* Responsive para el formulario */
+@media (max-width: 768px) {
+    .grid-formulario {
+        grid-template-columns: 1fr;
+    }
+    .campo-completo {
+        grid-column: 1 / 2;
+    }
+}

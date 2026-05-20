@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-fuerte">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes Dual | La Aventura te Espera</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navegacion-principal contenedor">
+            <div class="logo">VIAJES<span>DUAL</span></div>
+            <div class="enlaces">
+                <a href="index.html" class="activo">Inicio</a>
+                <a href="destinos.html">Destinos</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-contenido contenedor">
+                <h1>DESCUBRE LA MAGIA DE DOS MUNDOS</h1>
+                <p>Desde el sol abrazador del trópico hasta la majestuosidad de la nieve eterna. Redefinimos tu forma de viajar.</p>
+                <a href="destinos.html" class="boton-primario">Explorar Paquetes</a>
+            </div>
+        </section>
+
+        <section class="sobre-nosotros contenedor alineacion-lineal">
+            <h2 class="titulo-seccion">¿Por qué viajar con nosotros?</h2>
+            <div class="grid-tarjetas">
+                <article class="tarjeta">
+                    <img src="svg/carrito.svg" alt="Icono Destinos" class="icono-tarjeta">
+                    <h3>Rutas Exclusivas</h3>
+                    <p>Diseñamos itinerarios únicos que se alejan del turismo masivo para ofrecerte experiencias auténticas.</p>
+                </article>
+                <article class="tarjeta">
+                    <img src="svg/escudo.svg" alt="Icono Seguridad" class="icono-tarjeta">
+                    <h3>Viaja Seguro</h3>
+                    <p>Contamos con asistencia 24/7 y guías certificados para que tu única preocupación sea disfrutar del paisaje.</p>
+                </article>
+                <article class="tarjeta">
+                    <img src="svg/estrella.svg" alt="Icono Calidad" class="icono-tarjeta">
+                    <h3>Calidad Premium</h3>
+                    <p>Alianzas con los mejores hoteles boutique y transporte de primera clase en todos nuestros destinos.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="galeria-seccion contenedor alineacion-lineal">
+            <h2 class="titulo-seccion">Destinos Destacados</h2>
+            <div class="slideshow-container sombra">
+                <img id="imagen-galeria" src="imagenes/viaje1.jpg" alt="Destino Turístico">
+                <div class="controles-slider">
+                    <button id="btn-anterior" class="boton-flecha">&#10094;</button>
+                    <button id="btn-siguiente" class="boton-flecha">&#10095;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+    <div class="contenedor">
+        <p>&copy; 2026 | Desarrollado por Jeremi Vera &amp; Abel Montoya</p>
+        <p style="color: var(--texto-gris); font-size: 1.4rem; margin-top: 0.5rem;">Proyecto de Desarrollo de Aplicaciones Web - Todos los derechos reservados</p>
+    </div>
+</footer>
+
+    <script src="JavaScript/scripts.js"></script>
+</body>
+</html>

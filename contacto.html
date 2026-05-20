@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-fuerte">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes Dual | Reservas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navegacion-principal contenedor">
+            <div class="logo">VIAJES<span>DUAL</span></div>
+            <div class="enlaces">
+                <a href="index.html">Inicio</a>
+                <a href="destinos.html">Destinos</a>
+                <a href="contacto.html" class="activo">Contacto / Reservas</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenedor principal" style="margin-top: 5rem;">
+        <section class="contacto-seccion alineacion-lineal">
+            <h1 class="titulo-seccion">Planifica tu Aventura</h1>
+            <p style="color: var(--texto-gris); font-size: 1.8rem; margin-top: -2rem; margin-bottom: 3rem;">
+                Completa los detalles de tu viaje y un asesor se pondrá en contacto contigo para confirmar la reserva.
+            </p>
+
+            <form id="formulario-reserva" class="formulario">
+                <fieldset>
+                    <legend>Detalles de la Reserva</legend>
+                    
+                    <div class="grid-formulario">
+                        <div class="campo">
+                            <label for="nombre">Nombre Completo:</label>
+                            <input type="text" id="nombre" class="input-text" placeholder="Ej. Juan Pérez">
+                        </div>
+
+                        <div class="campo">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" id="correo" class="input-text" placeholder="tu@correo.com">
+                        </div>
+
+                        <div class="campo">
+                            <label for="destino">Selecciona tu Destino:</label>
+                            <select id="destino" class="input-text">
+                                <option value="" disabled selected>-- Elige un destino --</option>
+                                <option value="egipto">Misterios de Egipto</option>
+                                <option value="suiza">Alpes Suizos</option>
+                                <option value="caribe">Paraíso Caribeño</option>
+                                <option value="islandia">Auroras de Islandia</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="fecha">Fecha de Viaje:</label>
+                            <input type="date" id="fecha" class="input-text">
+                        </div>
+
+                        <div class="campo">
+                            <label for="pasajeros">Número de Pasajeros (Asientos):</label>
+                            <input type="number" id="pasajeros" class="input-text" min="1" max="10" placeholder="Ej. 2">
+                        </div>
+
+                        <div class="campo">
+                            <label for="hospedaje">Días de Hospedaje:</label>
+                            <input type="number" id="hospedaje" class="input-text" min="1" max="30" placeholder="Ej. 5">
+                        </div>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="mensaje">Peticiones especiales o dudas adicionales:</label>
+                        <textarea id="mensaje" class="input-text" placeholder="Alergias, necesidades de accesibilidad, etc."></textarea>
+                    </div>
+
+                    <div class="enviar">
+                        <input type="submit" value="Solicitar Cotización" class="boton-primario boton-bloque">
+                    </div>
+                    
+                    <div id="mensaje-alerta" class="alerta"></div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+    <div class="contenedor">
+        <p>&copy; 2026 | Desarrollado por Jeremi Vera &amp; Abel Montoya</p>
+        <p style="color: var(--texto-gris); font-size: 1.4rem; margin-top: 0.5rem;">Proyecto de Desarrollo de Aplicaciones Web - Todos los derechos reservados</p>
+    </div>
+</footer>
+
+    <script src="JavaScript/scripts.js"></script>
+</body>
+</html>
